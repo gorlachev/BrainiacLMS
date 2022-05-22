@@ -9,12 +9,20 @@
     <div class="card my-2">
       <div class="card-body">
         <h5 class="card-title">{{ news_item.title }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ news_item.date|date:"d.m.Y" }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{ news_item.date }}</h6>
         <p class="card-text">{{ news_item.preview }}</p>
         <a href="#" class="card-link">Подробнее</a>
       </div>
     </div>
     {% endfor %}
+<!--    <div class="card my-2">-->
+<!--      <div class="card-body">-->
+<!--        <h5 class="card-title">News for Search</h5>-->
+<!--        <h6 class="card-subtitle mb-2 text-muted">{% now 'Y-m-d H:i' %}</h6>-->
+<!--        <p class="card-text">Words for search: python datetime</p>-->
+<!--        <a href="{% url 'mainapp:news' %}?q=python datetime" class="card-link">Подробнее</a>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 
   <div class="col-lg-4">
