@@ -76,7 +76,7 @@ class LoginView(TemplateView):
 
 class NewsListView(ListView):
     model = News
-    paginate_by = 5
+    paginate_by = 2
 
     def get_queryset(self):
         return super().get_queryset().filter(deleted=False)
@@ -128,7 +128,9 @@ class CourseDetailView(TemplateView):
                 course=context_data['course_object'],
                 user=self.request.user
             )
-
+        # from django.core.paginator import Paginator
+        # paginator = Paginator(context_data['feedback_list'], 2)
+        # paginator.page(1)
         return context_data
 
 

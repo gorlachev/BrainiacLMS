@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -195,7 +196,6 @@ EMAIL_FILE_PATH = 'emails-tmp'
 # }
 
 LOG_FILE = BASE_DIR / "log" / "main_log.log"
-
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -217,3 +217,5 @@ LOGGING = {
         "django": {"level": "INFO", "handlers": ["file", "console"]},
     },
 }
+
+LOCALE_PATHS = [BASE_DIR / 'locale']
